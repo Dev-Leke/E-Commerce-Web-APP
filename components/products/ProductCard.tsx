@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductCardProps {
   id: string;
@@ -10,18 +11,26 @@ interface ProductCardProps {
   onAddToCart?: () => void;
 }
 
-const ProductCard = ({ name, price, image, onAddToCart }: ProductCardProps) => {
+const ProductCard = ({
+  id,
+  name,
+  price,
+  image,
+  onAddToCart,
+}: ProductCardProps) => {
   return (
     <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition duration-300 flex flex-col">
       {/* Product Image */}
-      <div className="w-full h-40 relative mb-4">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover rounded-lg"
-        />
-      </div>
+      <Link href={`/product/${id}`}>
+        <div className="w-full h-40 relative mb-4">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      </Link>
 
       {/* Product Info */}
       <h3 className="text-md font-semibold mb-2">{name}</h3>
