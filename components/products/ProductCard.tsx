@@ -11,6 +11,7 @@ interface ProductCardProps {
   onAddToCart?: () => void;
 }
 
+<<<<<<< Updated upstream
 const ProductCard = ({
   id,
   name,
@@ -18,6 +19,9 @@ const ProductCard = ({
   image,
   onAddToCart,
 }: ProductCardProps) => {
+=======
+const ProductCard = ({id, name, price, image, onAddToCart }: ProductCardProps) => {
+>>>>>>> Stashed changes
   return (
     <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition duration-300 flex flex-col">
       {/* Product Image */}
