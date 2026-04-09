@@ -27,7 +27,9 @@ const ProductCard = ({
             src={image}
             alt={name}
             fill
+            sizes="(max-width: 768px) 100vw, 25vw"
             className="object-cover rounded-lg"
+            loading="eager"
           />
         </div>
       </Link>
