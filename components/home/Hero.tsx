@@ -11,7 +11,7 @@ export default function Hero() {
           fill
           sizes="100vw"
           style={{ objectFit: "cover" }}
-          loading="eager" // since it's above the fold
+          loading="eager"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
