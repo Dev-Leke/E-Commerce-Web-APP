@@ -13,7 +13,7 @@ const categories = [
 const ShopCategories = () => {
   return (
     <section className="w-full bg-gray-50 py-16">
-      {/* Centered Content */}
+      
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center">
           Shop by Category
