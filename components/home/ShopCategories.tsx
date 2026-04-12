@@ -1,6 +1,7 @@
 "use client";
 
 import CategoryCard from "./CategoryCard";
+import { useRouter } from "next/navigation";
 
 const categories = [
   { title: "Fruits", image: "/images/fruitsCategory.jpg" },
@@ -11,6 +12,8 @@ const categories = [
 ];
 
 const ShopCategories = () => {
+  const router = useRouter();
+
   return (
     <section className="w-full bg-gray-50 py-16">
       
@@ -25,7 +28,7 @@ const ShopCategories = () => {
               key={cat.title}
               title={cat.title}
               image={cat.image}
-              onClick={() => alert(`Clicked ${cat.title}`)}
+              onClick={() => router.push(`/shop?category=${cat.title}`)}
             />
           ))}
         </div>
