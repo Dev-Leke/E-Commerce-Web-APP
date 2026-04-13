@@ -137,7 +137,7 @@ function CheckoutForm({ clientSecret }: { clientSecret: string }) {
           </p>
           <div className="flex gap-3">
             <Link
-              href="/Shop"
+              href="/shop"
               className="flex-1 border-2 border-green-500 text-green-600 py-3 rounded-lg font-semibold hover:bg-green-50 transition text-center"
             >
               Continue Shopping
@@ -318,7 +318,7 @@ function CheckoutContent() {
 
   useEffect(() => {
     if (cart.length === 0) {
-      router.replace("/Shop");
+      router.replace("/shop");
       return;
     }
 

@@ -27,7 +27,7 @@ const ShopCategories = () => {
               title={cat.title}
               emoji={cat.emoji}
               image={cat.image}
-              onClick={() => router.push(`/Shop?category=${cat.title}`)}
+              onClick={() => router.push(`/shop?category=${cat.title}`)}
             />
           ))}
         </div>

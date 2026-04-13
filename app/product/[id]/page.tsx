@@ -23,7 +23,7 @@ export default function ProductPage() {
     return (
       <div className="p-10 text-center">
         <p className="text-gray-500 mb-4">Product not found.</p>
-        <Link href="/Shop" className="text-green-600 hover:underline">
+        <Link href="/shop" className="text-green-600 hover:underline">
           ← Back to Shop
         </Link>
       </div>
@@ -43,7 +43,7 @@ export default function ProductPage() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Back link */}
         <Link
-          href="/Shop"
+          href="/shop"
           className="text-green-600 hover:underline text-sm mb-6 inline-block"
         >
           ← Back to Shop

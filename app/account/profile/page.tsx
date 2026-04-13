@@ -108,7 +108,7 @@ function ProfileContent() {
             <div className="text-center py-8">
               <p className="text-gray-400 mb-4">Your cart is empty</p>
               <Link
-                href="/Shop"
+                href="/shop"
                 className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition text-sm"
               >
                 Start Shopping

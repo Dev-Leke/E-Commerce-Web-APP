@@ -23,7 +23,7 @@ export default function Navbar() {
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && search.trim()) {
-      router.push(`/Shop?search=${encodeURIComponent(search.trim())}`);
+      router.push(`/shop?search=${encodeURIComponent(search.trim())}`);
       setSearch("");
     }
   };
@@ -50,7 +50,7 @@ export default function Navbar() {
           <Link href="/" className="hover:text-green-200 transition">
             Home
           </Link>
-          <Link href="/Shop" className="hover:text-green-200 transition">
+          <Link href="/shop" className="hover:text-green-200 transition">
             Shop
           </Link>
           <Link

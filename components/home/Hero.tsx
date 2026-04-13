@@ -33,13 +33,13 @@ export default function Hero() {
           </p>
           <div className="flex gap-4">
             <Link
-              href="/Shop"
+              href="/shop"
               className="bg-green-500 px-8 py-3 rounded-lg font-semibold hover:bg-green-600 active:scale-95 transition"
             >
               Shop Now
             </Link>
             <Link
-              href="/Shop"
+              href="/shop"
               className="bg-white/20 backdrop-blur-sm border border-white/30 px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition"
             >
               View Deals

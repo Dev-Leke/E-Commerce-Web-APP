@@ -50,9 +50,9 @@ function ShopContent() {
 
   const setCategory = (cat: string) => {
     if (cat === "All") {
-      router.push("/Shop");
+      router.push("/shop");
     } else {
-      router.push(`/Shop?category=${cat}`);
+      router.push(`/shop?category=${cat}`);
     }
   };
 

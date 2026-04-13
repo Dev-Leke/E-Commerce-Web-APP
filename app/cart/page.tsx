@@ -32,7 +32,7 @@ export default function CartPage() {
           Looks like you haven't added anything yet.
         </p>
         <Link
-          href="/Shop"
+          href="/shop"
           className="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition font-semibold"
         >
           Start Shopping
@@ -168,7 +168,7 @@ export default function CartPage() {
           </button>
 
           <Link
-            href="/Shop"
+            href="/shop"
             className="block text-center text-green-600 hover:underline text-sm"
           >
             ← Continue Shopping

@@ -62,7 +62,7 @@ const FeaturedProducts = () => {
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold">Featured Products</h2>
           <Link
-            href="/Shop"
+            href="/shop"
             className="flex items-center gap-1 text-green-600 hover:text-green-700 font-medium transition"
           >
             View All

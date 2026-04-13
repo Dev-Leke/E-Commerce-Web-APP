@@ -89,7 +89,7 @@ function OrdersContent() {
             You haven&apos;t placed any orders yet.
           </p>
           <Link
-            href="/Shop"
+            href="/shop"
             className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition font-semibold"
           >
             Start Shopping
