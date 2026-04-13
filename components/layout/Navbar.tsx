@@ -3,12 +3,22 @@
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
+
+function useIsClient() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+}
 
 export default function Navbar() {
   const { cart } = useCart();
   const router = useRouter();
   const [search, setSearch] = useState("");
+  const isClient = useIsClient();
+
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -65,7 +75,7 @@ export default function Navbar() {
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.4 7h12.8M7 13L5.4 5M10 21a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z"
               />
             </svg>
-            {totalItems > 0 && (
+            {isClient && totalItems > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                 {totalItems > 99 ? "99+" : totalItems}
               </span>
