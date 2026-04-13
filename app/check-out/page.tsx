@@ -248,7 +248,6 @@ function CheckoutForm({ clientSecret }: { clientSecret: string }) {
           </button>
         </div>
 
-        {/* RIGHT: Order Summary */}
         <div className="bg-white rounded-xl shadow-sm p-6 h-fit sticky top-6">
           <h2 className="text-lg font-bold mb-4">
             Order Summary ({cart.length} items)

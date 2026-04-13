@@ -10,7 +10,7 @@ interface ProductCardProps {
   price: number;
   image: string;
   onAddToCart?: () => void;
-  priority?: boolean; // ✅ add this
+  priority?: boolean;
 }
 
 const FALLBACK =
@@ -36,7 +36,7 @@ const ProductCard = ({
             fill
             sizes="(max-width: 768px) 100vw, 25vw"
             className="object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
-            priority={priority} // ✅ add this
+            priority={priority}
             onError={() => setSrc(FALLBACK)}
           />
         </div>

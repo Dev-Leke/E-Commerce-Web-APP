@@ -76,7 +76,6 @@ function ShopContent() {
         />
       </div>
 
-      {/* Category filters */}
       <div className="flex flex-wrap gap-2 mb-8">
         {categories.map((cat) => (
           <button
@@ -93,7 +92,6 @@ function ShopContent() {
         ))}
       </div>
 
-      {/* Grid */}
       {loading ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {Array.from({ length: 12 }).map((_, i) => (

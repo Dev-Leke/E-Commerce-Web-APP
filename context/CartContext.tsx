@@ -20,7 +20,6 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | null>(null);
 
-//Load initial cart outside component to avoid useEffect setState
 function getInitialCart(): CartItem[] {
   if (typeof window === "undefined") return [];
   try {
@@ -34,7 +33,6 @@ function getInitialCart(): CartItem[] {
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>(getInitialCart);
 
-  //Save cart to localStorage whenever it changes
   useEffect(() => {
     try {
       localStorage.setItem("grocerymart_cart", JSON.stringify(cart));

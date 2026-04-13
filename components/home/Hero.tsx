@@ -46,7 +46,6 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Stats */}
           <div className="flex gap-8 mt-10">
             <div>
               <p className="text-2xl font-bold">50+</p>

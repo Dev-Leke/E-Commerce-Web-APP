@@ -78,7 +78,7 @@ const FeaturedProducts = () => {
               name={product.name}
               price={product.price}
               image={product.image}
-              priority={index === 0} // ✅ add this
+              priority={index === 0}
               onAddToCart={() => addToCart({ ...product, quantity: 1 })}
             />
           ))}

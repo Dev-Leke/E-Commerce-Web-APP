@@ -41,7 +41,6 @@ export default function ProductPage() {
   return (
     <section className="w-full py-16">
       <div className="max-w-6xl mx-auto px-4">
-        {/* Back link */}
         <Link
           href="/shop"
           className="text-green-600 hover:underline text-sm mb-6 inline-block"
@@ -50,7 +49,6 @@ export default function ProductPage() {
         </Link>
 
         <div className="grid md:grid-cols-2 gap-10 bg-white rounded-2xl shadow-md p-8">
-          {/* Image */}
           <div className="relative w-full h-80 rounded-xl overflow-hidden">
             <Image
               src={imageSrc}
@@ -62,7 +60,6 @@ export default function ProductPage() {
             />
           </div>
 
-          {/* Details */}
           <div className="flex flex-col justify-center">
             <p className="text-sm text-gray-400 uppercase mb-2">
               {product.category}

@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: Math.round(amount * 100),
       currency: "usd",
-      // ✅ Remove automatic_payment_methods, use card directly instead
+
       payment_method_types: ["card"],
     });
 
