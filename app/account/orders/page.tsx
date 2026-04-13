@@ -86,7 +86,7 @@ function OrdersContent() {
         <div className="text-center py-20 bg-white rounded-xl shadow-sm">
           <p className="text-5xl mb-4">📦</p>
           <p className="text-gray-500 mb-6">
-            You haven't placed any orders yet.
+            You haven&apos;t placed any orders yet.
           </p>
           <Link
             href="/Shop"
