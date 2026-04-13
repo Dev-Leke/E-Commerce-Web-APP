@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
 
@@ -15,6 +16,7 @@ function useIsClient() {
 
 export default function Navbar() {
   const { cart } = useCart();
+  const { user, userData } = useAuth();
   const router = useRouter();
   const [search, setSearch] = useState("");
   const isClient = useIsClient();
@@ -27,6 +29,12 @@ export default function Navbar() {
       setSearch("");
     }
   };
+
+  // ✅ Show first name if logged in, otherwise "Account"
+  const accountLabel =
+    isClient && user
+      ? userData?.firstName || user.email?.split("@")[0] || "Account"
+      : "Account";
 
   return (
     <nav className="w-full bg-green-600 text-white">
@@ -55,9 +63,18 @@ export default function Navbar() {
           </Link>
           <Link
             href="/account/profile"
-            className="hover:text-green-200 transition"
+            className="hover:text-green-200 transition flex items-center gap-1"
           >
-            Account
+            {isClient && user && (
+              <span className="w-6 h-6 rounded-full bg-white text-green-600 text-xs font-bold flex items-center justify-center">
+                {(
+                  userData?.firstName?.[0] ||
+                  user.email?.[0] ||
+                  "U"
+                ).toUpperCase()}
+              </span>
+            )}
+            {accountLabel}
           </Link>
 
           <Link href="/cart" className="relative">
