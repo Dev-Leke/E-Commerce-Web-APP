@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import ProductCard from "../products/ProductCard";
 
 const products = [

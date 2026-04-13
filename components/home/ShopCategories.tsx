@@ -1,31 +1,33 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import CategoryCard from "./CategoryCard";
 
 const categories = [
-  { title: "Fruits", image: "/images/fruitsCategory.jpg" },
-  { title: "Vegetables", image: "/images/vegetableCategory.jpg" },
-  { title: "Dairy", image: "/images/dairy.jpg" },
-  { title: "Meat", image: "/images/meatCategory.jpg" },
-  { title: "Bakery", image: "/images/bakeryCategory.jpg" },
+  { title: "Fruits", emoji: "🍎", image: "/images/fruitsCategory.jpg" },
+  { title: "Vegetables", emoji: "🥦", image: "/images/vegetableCategory.jpg" },
+  { title: "Dairy", emoji: "🥛", image: "/images/dairy.jpg" },
+  { title: "Meat", emoji: "🥩", image: "/images/meatCategory.jpg" },
+  { title: "Bakery", emoji: "🍞", image: "/images/bakeryCategory.jpg" },
 ];
 
 const ShopCategories = () => {
+  const router = useRouter();
   return (
     <section className="w-full bg-gray-50 py-16">
-      {/* Centered Content */}
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Shop by Category
-        </h2>
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl font-bold">Shop by Category</h2>
+        </div>
 
-        <div className="flex justify-center gap-6 flex-wrap">
+        <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
           {categories.map((cat) => (
             <CategoryCard
               key={cat.title}
               title={cat.title}
+              emoji={cat.emoji}
               image={cat.image}
-              onClick={() => alert(`Clicked ${cat.title}`)}
+              onClick={() => router.push(`/Shop?category=${cat.title}`)}
             />
           ))}
         </div>

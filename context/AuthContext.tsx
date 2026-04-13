@@ -1,33 +1,52 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "@/lib/firebase";
+import { auth, db } from "@/lib/firebase";
 import { onAuthStateChanged, User } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 
-// 1. Create the context
+interface UserData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  shippingAddress: string;
+}
+
 const AuthContext = createContext<{
   user: User | null;
+  userData: UserData | null;
+  loading: boolean;
 }>({
   user: null,
+  userData: null,
+  loading: true,
 });
 
-// 2. Provider (this holds the brain)
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [userData, setUserData] = useState<UserData | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Firebase listens for login/logout
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
+      if (currentUser) {
+        const snap = await getDoc(doc(db, "users", currentUser.uid));
+        if (snap.exists()) setUserData(snap.data() as UserData);
+      } else {
+        setUserData(null);
+      }
+      setLoading(false);
     });
-
     return () => unsubscribe();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, userData, loading }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 
-// 3. Custom hook (easy access)
 export const useAuth = () => useContext(AuthContext);
