@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 export interface CartItem {
   id: string;
@@ -20,8 +20,28 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | null>(null);
 
+//Load initial cart outside component to avoid useEffect setState
+function getInitialCart(): CartItem[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const stored = localStorage.getItem("grocerymart_cart");
+    return stored ? JSON.parse(stored) : [];
+  } catch {
+    return [];
+  }
+}
+
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(getInitialCart);
+
+  //Save cart to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem("grocerymart_cart", JSON.stringify(cart));
+    } catch (err) {
+      console.error("Failed to save cart:", err);
+    }
+  }, [cart]);
 
   const addToCart = (item: CartItem) => {
     setCart((prev) => {
