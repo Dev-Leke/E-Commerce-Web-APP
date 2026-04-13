@@ -32,29 +32,18 @@ function CheckoutForm({ clientSecret }: { clientSecret: string }) {
   const elements = useElements();
   const [imgSrc, setImgSrc] = useState<Record<string, string>>({});
 
+  // ✅ Replace useState for form with this:
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
+    name: userData ? `${userData.firstName} ${userData.lastName}` : "",
+    email: user?.email || "",
+    phone: userData?.phoneNumber || "",
+    address: userData?.shippingAddress || "",
     city: "",
     notes: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    if (userData) {
-      setForm((f) => ({
-        ...f,
-        name: `${userData.firstName} ${userData.lastName}`,
-        email: user?.email || "",
-        phone: userData.phoneNumber || "",
-        address: userData.shippingAddress || "",
-      }));
-    }
-  }, [userData, user]);
 
   const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
