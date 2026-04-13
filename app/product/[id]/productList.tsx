@@ -46,7 +46,7 @@ const itemsData: Product[] = [
     name: "Grapes",
     price: 2.99,
     category: "Fruits",
-    image: "https://images.unsplash.com/photo-1423723551400-f9c6d55e2a53?w=400",
+    image: "https://images.unsplash.com/photo-1596363505729-4190a9506133?w=400",
     description: "Sweet seedless grapes perfect for snacking.",
   },
   {
@@ -144,7 +144,7 @@ const itemsData: Product[] = [
     name: "Tomatoes",
     price: 1.99,
     category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1546094096-0df4bcabd337?w=400",
+    image: "https://images.unsplash.com/photo-1558818498-28c1e002b655?w=400",
     description: "Ripe, juicy tomatoes great for salads, sauces, and cooking.",
   },
   {
@@ -227,7 +227,7 @@ const itemsData: Product[] = [
     name: "Greek Yogurt",
     price: 1.75,
     category: "Dairy",
-    image: "https://images.unsplash.com/photo-1488477181228-c84c8b1b2b31?w=400",
+    image: "https://images.unsplash.com/photo-1571212515416-fef01fc43637?w=400",
     description: "Thick and creamy Greek yogurt great for breakfast or snacks.",
   },
   {
@@ -259,7 +259,7 @@ const itemsData: Product[] = [
     name: "Mozzarella",
     price: 3.75,
     category: "Dairy",
-    image: "https://images.unsplash.com/photo-1587252537745-0d4a1c7b2a42?w=400",
+    image: "https://images.unsplash.com/photo-1554433607-66b5efe9d304?w=400",
     description: "Soft mozzarella perfect for pizza, salads, and melting.",
   },
   {
@@ -285,7 +285,7 @@ const itemsData: Product[] = [
     name: "Ground Beef",
     price: 8.5,
     category: "Meat",
-    image: "https://images.unsplash.com/photo-1588347818036-c1951ab80279?w=400",
+    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400",
     description: "Fresh ground beef perfect for burgers and hearty dishes.",
   },
   {
@@ -343,7 +343,7 @@ const itemsData: Product[] = [
     name: "Sourdough Bread",
     price: 4.5,
     category: "Bakery",
-    image: "https://images.unsplash.com/photo-1585478259715-876acc5be8eb?w=400",
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=400",
     description: "Artisan sourdough with a crispy crust and chewy interior.",
   },
   {
@@ -375,7 +375,7 @@ const itemsData: Product[] = [
     name: "Baguette",
     price: 2.25,
     category: "Bakery",
-    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=400",
+    image: "https://images.unsplash.com/photo-1606519153928-7b77f8f69651?w=400",
     description: "Classic French baguette with a crispy crust.",
   },
   {
